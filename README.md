@@ -21,23 +21,22 @@ $0 <RESOURCES_PATH> [BINARY_PATH]
 
    defaults to \${HOME}/.local/bin/
    
- - finally all needed export calls are gathered into RESOURCES_PATH/set_environment.sh
+ - all variable-export are gathered into BINARY_PATH/set_vbcc_environment.sh
    You just may source it at startup.
 
 Inspired by (Cross Development for the Amiga with VBCC Wei-ju Wu (2016))[https://www.youtube.com/watch?v=vFV0oEyY92I]
-see also http://sun.hasenbraten.de/vbcc/ and related tools.
+Have a look at the source of many tools: http://sun.hasenbraten.de/vbcc/ .
 
 Toolchain
 ---------
 
- - vbcc C-Compiler ISO/IEC 9899:1989 and a subset of the new standard
+ - vbcc (C-Compiler) ISO/IEC 9899:1989 and a subset of the new standard
    ISO/IEC 9899:1999 (C99) for amiga 68000 CPU and kickstart 1.3 or
    2.x/3.x
  - vasm (assembler)
  - vlink (linker)
  - NDK3.9 (Amiga OS headers and libraries)
-
- - Maybe you also need Amiga System headers and resources
+   Maybe you also want this Amiga System headers and resources
    https://www.haage-partner.de/download/AmigaOS/NDK39.lha
 
 You already set up an (FS-UAE?) emulator with shared volume
@@ -56,7 +55,7 @@ e.g.
 	install_amiga68k_crosscompiler.sh ./tmp
 	source ~/.local/bin/set_vbcc_environment.sh
 
-$NKD_INC holds amiga system c-headers 
+Folder $NKD_INC holds amiga system c-headers 
 and $NKD_INC/../include_i holds assembler includes
 
 
@@ -82,6 +81,5 @@ This is a snippet from my example Makefile:
 	
 	%: %.asm
         $(AS) $(AS_FLAGS) -o $@ $<
-
 
 
