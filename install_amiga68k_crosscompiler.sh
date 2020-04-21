@@ -72,13 +72,17 @@ echo "using DOWNLOAD_PATH=${DOWNLOAD_PATH}"
 
 FOR_TARGET_1_3="TRUE" # please here just either of one
 
+VBCC_BASE_URL="http://phoenix.owl.de"
+VBCC_URLPATH="${VBCC_BASE_URL}/vbcc/2019-10-04"
+VBCC_TARBALL_FILE=vbcc0_9g.tar.gz
+
 # you may add  for WB2.x/3.x target platform, too
 DOWNLOAD_ARCHIVES="\
-http://phoenix.owl.de/tags/vbcc0_9g.tar.gz \
-http://phoenix.owl.de/vbcc/2019-10-04/vbcc_target_m68k-kick13.lha \
-http://phoenix.owl.de/vbcc/2019-10-04/vbcc_target_m68k-amigaos.lha \
-http://phoenix.owl.de/vbcc/2019-10-04/vbcc_unix_config.tar.gz \
-http://phoenix.owl.de/vbcc/docs/vbcc.pdf \
+${VBCC_BASE_URL}/tags/${VBCC_TARBALL_FILE} \
+${VBCC_URLPATH}/vbcc_target_m68k-kick13.lha \
+${VBCC_URLPATH}/vbcc_target_m68k-amigaos.lha \
+${VBCC_URLPATH}/vbcc_unix_config.tar.gz \
+${VBCC_BASE_URL}/vbcc/docs/vbcc.pdf \
 http://sun.hasenbraten.de/vlink/release/vlink.tar.gz \
 http://sun.hasenbraten.de/vlink/release/vlink.pdf \
 http://sun.hasenbraten.de/vasm/release/vasm.tar.gz \
@@ -140,7 +144,7 @@ mkdir -p "${BINARY_PATH}/amiga_sdk/vbcc" # installation directory
 
 # vbcc_tools
 cd "${DOWNLOAD_PATH}"
-tar -xf vbcc0_9fP1.tar.gz
+tar -xf ${VBCC_TARBALL_FILE}
 cd vbcc
 mkdir -p bin
 echo "A lot of questions which you all want to be the default"
