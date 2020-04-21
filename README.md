@@ -4,7 +4,7 @@ Script installs amiga cross compiling toolchain into users home.
 Target platform: amiga 68000 Kickstart/WB 1.3 and 2.x/3.x
 
 * Checks for and installs missing system packages, 
-tested for Debian Scratch Stable.
+tested for Debian Scratch Stable and debian Buster stable
 
 * Downloads and installs the needed amiga SDK tools,
 and adds proper enviroment settings.
