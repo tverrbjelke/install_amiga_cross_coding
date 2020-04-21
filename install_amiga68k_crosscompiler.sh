@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # Script installs amiga cross compiling toolchain into users home.
-# Target platform: amiga 68000 Kickstart/WB 1.3 and 2.x/3.x
+# focues on target platform: amiga 68000 Kickstart/WB 1.3 and 2.x/3.x
+# tested for debian stretch and debian buster on amd64
+# installing vbcc 0.9g + current version of vasm, vlink
+# -- tverrbjelke@gmx.de at 21th April 2020
+#
+# make use and change as you like
+
 USAGE="\
 Usage
 -----
@@ -68,11 +74,11 @@ FOR_TARGET_1_3="TRUE" # please here just either of one
 
 # you may add  for WB2.x/3.x target platform, too
 DOWNLOAD_ARCHIVES="\
-http://server.owl.de/~frank/tags/vbcc0_9fP1.tar.gz \
-http://server.owl.de/~frank/vbcc/2017-08-14/vbcc_target_m68k-kick13.lha \
-http://server.owl.de/~frank/vbcc/2017-08-14/vbcc_target_m68k-amigaos.lha \
-http://server.owl.de/~frank/vbcc/2017-08-14/vbcc_unix_config.tar.gz \
-http://serqver.owl.de/~frank/vbcc/docs/vbcc.pdf \
+http://phoenix.owl.de/tags/vbcc0_9g.tar.gz \
+http://phoenix.owl.de/vbcc/2019-10-04/vbcc_target_m68k-kick13.lha \
+http://phoenix.owl.de/vbcc/2019-10-04/vbcc_target_m68k-amigaos.lha \
+http://phoenix.owl.de/vbcc/2019-10-04/vbcc_unix_config.tar.gz \
+http://phoenix.owl.de/vbcc/docs/vbcc.pdf \
 http://sun.hasenbraten.de/vlink/release/vlink.tar.gz \
 http://sun.hasenbraten.de/vlink/release/vlink.pdf \
 http://sun.hasenbraten.de/vasm/release/vasm.tar.gz \
